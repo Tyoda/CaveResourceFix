@@ -1,6 +1,8 @@
 plugins {
     id 'java'
+    id 'com.github.johnrengelman.shadow' version '7.1.2'
 }
+apply plugin: 'com.github.johnrengelman.shadow'
 
 group 'net.buddat.wgenerator'
 version '1.0'
@@ -10,5 +12,12 @@ repositories {
 }
 
 dependencies {
-    compileOnly 'com.github.codeclubab:WurmModServerApi:1.4.0.2'
+    implementation 'com.github.codeclubab:WurmModServerApi:1.4.0.2'
+}
+
+shadowJar {
+    manifest {
+        attributes 'Main-Class': 'net.buddat.wgenerator.caveresourcefix.CaveResourceFix'
+    }
+    archiveName "${project.name}.jar"
 }
