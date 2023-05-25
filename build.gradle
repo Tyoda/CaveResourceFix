@@ -1,0 +1,14 @@
+plugins {
+    id 'java'
+}
+
+group 'net.buddat.wgenerator'
+version '1.0'
+
+repositories {
+    maven { url "https://www.jitpack.io" }
+}
+
+dependencies {
+    compileOnly 'com.github.codeclubab:WurmModServerApi:1.4.0.2'
+}
